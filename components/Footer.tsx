@@ -248,7 +248,7 @@ const Footer: React.FC = () => {
                                 </li>
                                 <li className="mb-2.5">
                                     <a
-                                        href="https://wa.link/5vae2c"
+                                        href="https://api.whatsapp.com/send?phone=212627573069&text=Hello%20%F0%9F%91%8B%20Are%20there%20cars%20available%3F"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-zinc-100 hover:text-[#D8AE5E] transition-all font-normal text-lg capitalize"
