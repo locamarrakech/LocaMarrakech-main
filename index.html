@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocaMarrakech - Location de Voitures de Luxe</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          container: {
+            center: true,
+            screens: {
+              sm: '640px',
+              md: '768px',
+              lg: '1024px',
+              xl: '1400px',
+              '2xl': '1600px',
+            },
+          },
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+              'arabic': ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#C9A96D', // Gold accent
+              'secondary': '#1A1A1A', // Deep black
+              'background-light': '#F5F5F5',
+              'background-dark': '#121212',
+              'text-light': '#1A1A1A',
+              'text-dark': '#EAEAEA',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .brand-carousel-track {
+        animation: scroll 40s linear infinite;
+      }
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 9)); }
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: #C9A96D !important;
+      }
+      .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Gallery Carousel Styles */
+      .gallery-carousel .swiper-button-next,
+      .gallery-carousel .swiper-button-prev {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: white;
+      }
+      .gallery-carousel .swiper-button-next:hover,
+      .gallery-carousel .swiper-button-prev:hover {
+        background: rgba(201, 169, 109, 0.8);
+        color: white;
+      }
+      .gallery-carousel .swiper-button-next:after,
+      .gallery-carousel .swiper-button-prev:after {
+        font-size: 1.2rem !important;
+      }
+      .gallery-carousel .swiper-slide {
+        transition: transform 0.3s ease;
+      }
+      .gallery-carousel .swiper-slide:hover {
+        transform: scale(1.05);
+      }
+      
+      /* RTL Support */
+      [dir="rtl"] {
+        direction: rtl;
+        text-align: right;
+      }
+      
+      [dir="ltr"] {
+        direction: ltr;
+        text-align: left;
+      }
+      
+      /* RTL-specific adjustments */
+      [dir="rtl"] .space-x-1 > * + *,
+      [dir="rtl"] .space-x-2 > * + *,
+      [dir="rtl"] .space-x-3 > * + *,
+      [dir="rtl"] .space-x-4 > * + *,
+      [dir="rtl"] .space-x-5 > * + *,
+      [dir="rtl"] .space-x-6 > * + * {
+        margin-left: 0;
+        margin-right: inherit;
+      }
+      
+      [dir="rtl"] .flex-row-reverse {
+        flex-direction: row-reverse;
+      }
+      
+      /* Fix text alignment for RTL */
+      [dir="rtl"] .text-left {
+        text-align: right;
+      }
+      
+      [dir="rtl"] .text-right {
+        text-align: left;
+      }
+      
+      /* Fix borders for RTL */
+      [dir="rtl"] .border-l {
+        border-left: none;
+        border-right: 1px solid;
+      }
+      
+      [dir="rtl"] .border-r {
+        border-right: none;
+        border-left: 1px solid;
+      }
+      
+      /* Fix positioning for RTL */
+      [dir="rtl"] .left-0 {
+        left: auto;
+        right: 0;
+      }
+      
+      [dir="rtl"] .right-0 {
+        right: auto;
+        left: 0;
+      }
+      
+      [dir="rtl"] .ml-2,
+      [dir="rtl"] .ml-3,
+      [dir="rtl"] .ml-4,
+      [dir="rtl"] .ml-5,
+      [dir="rtl"] .ml-6 {
+        margin-left: 0;
+        margin-right: inherit;
+      }
+      
+      [dir="rtl"] .mr-2,
+      [dir="rtl"] .mr-3,
+      [dir="rtl"] .mr-4,
+      [dir="rtl"] .mr-5,
+      [dir="rtl"] .mr-6 {
+        margin-right: 0;
+        margin-left: inherit;
+      }
+      
+      /* Fix Swiper navigation for RTL */
+      [dir="rtl"] .swiper-button-next {
+        left: 10px;
+        right: auto;
+      }
+      
+      [dir="rtl"] .swiper-button-prev {
+        right: 10px;
+        left: auto;
+      }
+      
+      /* Fix floating buttons for RTL */
+      [dir="rtl"] .fixed.bottom-6.right-6 {
+        right: auto;
+        left: 1.5rem;
+      }
+    </style>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
